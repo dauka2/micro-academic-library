@@ -1,0 +1,5 @@
+flask
+pypdf
+openai
+python-dotenv
+requests

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publications</title>
+</head>
+<body>
+    <h1>Publications</h1>
+
+    <ul>
+        {% for pub in pubs %}
+        <li>
+            <p>Title: {{ pub[1] }}</p>
+            <p>Summary: {{ pub[2] }}</p>
+            <p>Tags: {{ pub[3] }}</p>
+            <p>Year: {{ pub[4] }}</p>
+            <p>Organization: {{ pub[5] }}</p>
+            <p>Country: {{ pub[6] }}</p>
+            <p>Language: {{ pub[7] }}</p>
+            <p>PDF: <a href="/pdf/{{ pub[8] }}">Local PDF</a></p>
+            <p>Original Link: <a href="{{ pub[9] }}">Link</a></p>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p>Pages:</p>
+    {% for p in range(1, pages + 1) %}
+    {% if p == page %}
+        <b>{{ p }}</b>
+    {% else %}
+        <a href="?page={{ p }}">{{ p }}</a>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
